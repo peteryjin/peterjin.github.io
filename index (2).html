@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peter Jin</title>
+<meta name="description" content="Peter Jin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#20242B; --head:#15181D; --accent:#1F3A5F; --accent-soft:#2A4D78;
+    --muted:#6B7280; --line:#E5E7EB; --bg:#FFFFFF; --box:#FAFAFB;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:'Source Sans 3',system-ui,Arial,sans-serif;color:var(--ink);background:var(--bg);
+    font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent-soft);text-decoration:none}
+  a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  .nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:10}
+  .nav-inner{max-width:840px;margin:0 auto;padding:18px 28px;display:flex;
+    justify-content:space-between;align-items:center;gap:20px}
+  .brand{font-size:1.1rem;font-weight:700;color:var(--accent);letter-spacing:-0.01em}
+  .brand:hover{text-decoration:none;color:var(--accent)}
+  .links{display:flex;gap:26px}
+  .links a{color:var(--muted);font-size:.92rem;font-weight:600}
+  .links a:hover{color:var(--accent);text-decoration:none}
+
+  main{max-width:840px;margin:0 auto;padding:0 28px}
+
+  .about{display:flex;gap:44px;align-items:flex-start;padding:60px 0 50px}
+  .intro{flex:1}
+  h1{font-size:2.5rem;font-weight:700;color:var(--accent);letter-spacing:-0.018em;
+    line-height:1.1;margin-bottom:6px}
+  .namerule{width:42px;height:2px;background:var(--accent);margin:14px 0 18px}
+  .role{font-size:1.05rem;color:var(--muted);margin-bottom:18px}
+  .about-body p{max-width:60ch}
+  .photo{flex:0 0 auto}
+  .photo-box{width:196px;height:244px;border:1px solid var(--line);background:var(--box);
+    border-radius:6px;display:flex;align-items:center;justify-content:center;
+    color:#A6ABB3;font-size:.88rem;letter-spacing:.03em}
+
+  .section{padding:52px 0;border-top:1px solid var(--line)}
+  h2{font-size:1.4rem;font-weight:700;color:var(--head);letter-spacing:-0.01em;margin-bottom:6px}
+  .h2rule{width:42px;height:2px;background:var(--accent);margin-bottom:24px}
+  h3{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);margin:28px 0 10px}
+  .section h3:first-of-type{margin-top:0}
+  p{margin-bottom:12px}
+  .placeholder{color:var(--muted);font-style:italic}
+
+  footer{max-width:840px;margin:0 auto;padding:34px 28px 54px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.85rem}
+
+  @media(max-width:680px){
+    .about{flex-direction:column;gap:26px;padding:40px 0}
+    .photo{order:-1}
+    .photo-box{width:160px;height:200px}
+    .links{gap:18px} .links a{font-size:.85rem} .brand{font-size:1.02rem}
+    h1{font-size:2.05rem}
+  }
+</style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">Peter Jin</a>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#cv">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section id="about" class="about">
+      <div class="intro">
+        <h1>Peter Jin</h1>
+        <div class="namerule"></div>
+        <p class="role placeholder">[Title and affiliation]</p>
+        <div class="about-body">
+          <p class="placeholder">[Add a short bio and research overview here.]</p>
+        </div>
+      </div>
+      <div class="photo">
+        <div class="photo-box">Photo</div>
+      </div>
+    </section>
+
+    <section id="research" class="section">
+      <h2>Research</h2>
+      <div class="h2rule"></div>
+      <h3>Publications</h3>
+      <p class="placeholder">[List publications here.]</p>
+      <h3>Manuscripts Invited for Revision &amp; Under Review</h3>
+      <p class="placeholder">[List manuscripts under review here.]</p>
+      <h3>Selected Works in Progress</h3>
+      <p class="placeholder">[List works in progress here.]</p>
+    </section>
+
+    <section id="cv" class="section">
+      <h2>CV</h2>
+      <div class="h2rule"></div>
+      <p><a href="cv.pdf" target="_blank" rel="noopener">Download CV</a> <span class="placeholder">[add a file named cv.pdf to the site folder]</span></p>
+    </section>
+  </main>
+
+  <footer>&copy; <span id="year"></span> Peter Jin</footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
